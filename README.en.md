@@ -15,6 +15,14 @@ I am less interested in using AI to generate more content, and more interested i
 
 ## What I am building
 
+### CareerFolio（知历） · Exploring AI for resumes and career storytelling
+
+**CareerFolio** is an AI web project I built around resumes and job applications, exploring how AI can help job seekers communicate their experience more clearly.
+
+👉 [Live Demo](https://careerfolio-ai-resume.meriky.chatgpt.site/)
+
+---
+
 ### InsightFlow AI · Turn fragmented consumer signals into verifiable decisions
 
 In cross-border operations, the hard part is rarely a lack of information. The problem is that useful signals are scattered across product pages, reviews, videos, search trends and competitor evidence — making research slow and decisions easy to fall back on intuition.
