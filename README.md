@@ -1,6 +1,6 @@
 <sub>🌐 <b>中文</b> · <a href="README.en.md">English</a></sub>
 
-# Meriky · 张海璐
+# Meriky 
 
 **我做海外运营，也把真实业务里重复、依赖经验的判断做成 AI 工具。**
 
