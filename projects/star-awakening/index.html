@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>星辉觉醒 · Real-World Magical Transformation</title>
+  <style>
+    :root{--bg:#090b18;--panel:rgba(16,19,42,.72);--line:rgba(255,255,255,.14);--text:#f7f7ff;--muted:#b8bdd6;--accent:#c9b5ff;--accent2:#8ed9ff;--gold:#ffe1a1}
+    *{box-sizing:border-box} body{margin:0;background:radial-gradient(circle at 50% 20%,#1f2452 0,#0b0d1c 36%,#060711 100%);color:var(--text);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100vh}
+    .app{max-width:1180px;margin:auto;padding:24px}.top{display:flex;justify-content:space-between;gap:16px;align-items:flex-end;margin-bottom:18px;flex-wrap:wrap}.top h1{margin:0;font-size:clamp(26px,5vw,48px)}.top p{margin:.5rem 0 0;color:var(--muted);max-width:720px}.badge{border:1px solid var(--line);background:rgba(255,255,255,.06);border-radius:999px;padding:8px 12px;color:#ddd7ff}
+    .grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(300px,.8fr);gap:18px}@media(max-width:900px){.grid{grid-template-columns:1fr}}
+    .stage,.panel{border:1px solid var(--line);background:var(--panel);backdrop-filter:blur(16px);border-radius:28px;overflow:hidden}.stage{position:relative;min-height:690px}.videoWrap{position:absolute;inset:0;background:linear-gradient(140deg,#12152e,#060711);overflow:hidden}.videoWrap video{width:100%;height:100%;object-fit:cover;transform:scaleX(-1);filter:saturate(.86) contrast(1.06)}
+    .veil{position:absolute;inset:0;background:radial-gradient(circle at 50% 48%,transparent 0 31%,rgba(7,8,20,.18) 55%,rgba(7,8,20,.72) 100%);pointer-events:none}.ring{position:absolute;left:50%;top:52%;width:330px;height:330px;border:2px solid rgba(201,181,255,.45);border-radius:50%;transform:translate(-50%,-50%);box-shadow:0 0 40px rgba(201,181,255,.18),inset 0 0 30px rgba(142,217,255,.12);animation:spin 12s linear infinite}.ring:before,.ring:after{content:"";position:absolute;inset:28px;border:1px dashed rgba(255,225,161,.55);border-radius:50%}.ring:after{inset:66px;border-style:solid;border-color:rgba(142,217,255,.28)}
+    .core{position:absolute;left:50%;top:45%;width:28px;height:28px;background:linear-gradient(135deg,var(--gold),var(--accent));transform:translate(-50%,-50%) rotate(45deg);box-shadow:0 0 28px var(--accent);opacity:.2;transition:.6s}.core.on{opacity:1;transform:translate(-50%,-50%) rotate(225deg) scale(1.35)}
+    .garment{position:absolute;left:50%;top:54%;transform:translate(-50%,-50%);width:210px;height:310px;opacity:0;transition:.7s;pointer-events:none}.garment.on{opacity:1}.bodice{position:absolute;left:50%;top:22px;transform:translateX(-50%);width:126px;height:130px;border-radius:42px 42px 22px 22px;background:linear-gradient(180deg,rgba(255,255,255,.82),rgba(150,135,255,.28));border:1px solid rgba(255,255,255,.65);box-shadow:0 0 35px rgba(201,181,255,.28)}.skirt{position:absolute;left:50%;top:126px;transform:translateX(-50%);width:205px;height:165px;clip-path:polygon(35% 0,65% 0,100% 100%,0 100%);background:linear-gradient(180deg,rgba(180,168,255,.4),rgba(102,156,255,.12));border-bottom:1px solid rgba(255,255,255,.5)}
+    .wings{position:absolute;left:50%;top:45%;width:420px;height:280px;transform:translate(-50%,-50%);opacity:0;transition:.8s;pointer-events:none}.wings.on{opacity:.82}.wing{position:absolute;top:70px;width:175px;height:120px;border-radius:80% 20% 80% 20%;border:1px solid rgba(255,255,255,.65);background:radial-gradient(circle at 60% 50%,rgba(255,255,255,.45),rgba(142,217,255,.12) 48%,transparent 70%);box-shadow:0 0 50px rgba(142,217,255,.22)}.wing.l{left:24px;transform:rotate(-28deg)}.wing.r{right:24px;transform:scaleX(-1) rotate(-28deg)}
+    .particles{position:absolute;inset:0;overflow:hidden;pointer-events:none}.p{position:absolute;width:6px;height:6px;border-radius:50%;background:white;box-shadow:0 0 14px var(--accent);animation:float 2.4s ease-out forwards}.hud{position:absolute;left:18px;right:18px;bottom:18px;padding:16px;border:1px solid var(--line);border-radius:18px;background:rgba(7,8,20,.56);backdrop-filter:blur(12px)}.hud b{display:block;font-size:18px;margin-bottom:6px}.hud span{color:var(--muted)}
+    .panel{padding:18px}.panel h2{margin:0 0 12px}.steps{display:grid;gap:10px}.step{width:100%;text-align:left;border:1px solid var(--line);background:rgba(255,255,255,.035);color:var(--text);padding:12px 14px;border-radius:16px;cursor:pointer}.step.active{border-color:rgba(201,181,255,.78);background:rgba(201,181,255,.12)}.step small{display:block;color:var(--muted);margin-top:4px}.controls{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.controls button{border:1px solid var(--line);background:#f7f3ff;color:#15172b;padding:10px 14px;border-radius:14px;cursor:pointer}.controls button.secondary{background:transparent;color:var(--text)}.status{margin-top:14px;color:var(--muted);font-size:14px}.progress{height:8px;background:rgba(255,255,255,.08);border-radius:99px;overflow:hidden;margin-top:14px}.progress i{display:block;height:100%;width:16.6%;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:.4s}
+    @keyframes spin{to{transform:translate(-50%,-50%) rotate(360deg)}} @keyframes float{0%{opacity:0;transform:translateY(20px) scale(.4)}25%{opacity:1}100%{opacity:0;transform:translateY(-180px) scale(1.6)}}
+  </style>
+</head>
+<body>
+  <main class="app">
+    <div class="top"><div><h1>星辉觉醒</h1><p>Real-World Magical Transformation · 一个真人摄像头魔法变身交互原型。按动作一步解锁服装、光环与星尘。</p></div><div class="badge">Three.js / MediaPipe concept</div></div>
+    <div class="grid">
+      <section class="stage">
+        <div class="videoWrap"><video id="video" autoplay muted playsinline></video><div class="veil"></div></div>
+        <div class="ring"></div><div id="core" class="core"></div>
+        <div id="garment" class="garment"><div class="bodice"></div><div class="skirt"></div></div>
+        <div id="wings" class="wings"><div class="wing l"></div><div class="wing r"></div></div>
+        <div id="particles" class="particles"></div>
+        <div class="hud"><b id="stageTitle">01 · 魔法核心觉醒</b><span id="stageDesc">双手交叉放在胸前，保持 1 秒。</span></div>
+      </section>
+      <aside class="panel">
+        <h2>变身流程</h2><div id="steps" class="steps"></div>
+        <div class="progress"><i id="bar"></i></div>
+        <div class="controls"><button id="cameraBtn">开启摄像头</button><button id="prev" class="secondary">上一步</button><button id="next">下一步</button></div>
+        <div id="status" class="status">提示：如果浏览器拒绝摄像头权限，仍可用“下一步”预览视觉流程。</div>
+      </aside>
+    </div>
+  </main>
+  <script>
+    const data=[
+      ['魔法核心觉醒','双手交叉放在胸前，保持 1 秒。','胸口水晶亮起，符文与星尘开始响应。'],
+      ['召唤魔法上装','双臂从胸前向左右展开。','流光沿肩部和腰部编织出上装。'],
+      ['召唤魔法裙摆','右手在腰间顺时针画一圈。','腰部魔法阵展开，裙摆从星纱中绽放。'],
+      ['唤醒魔法战靴','向前踏一步并轻点脚尖。','地面符文亮起，能量沿脚踝向上流动。'],
+      ['星月加冕','右手举过头顶并旋转手腕。','星月皇冠与头部光环逐渐成形。'],
+      ['终极变身定格','转身半圈后面向镜头定格。','光翼展开，星尘爆发，完整造型锁定。']
+    ];
+    let step=0;
+    const stepsEl=document.getElementById('steps');
+    data.forEach((s,i)=>{const b=document.createElement('button');b.className='step';b.innerHTML=`<strong>${String(i+1).padStart(2,'0')} · ${s[0]}</strong><small>${s[1]}</small>`;b.addEventListener('click',()=>{step=i;render()});stepsEl.appendChild(b)});
+    function burst(n=24){const box=document.getElementById('particles');box.innerHTML='';for(let i=0;i<n;i++){const p=document.createElement('i');p.className='p';p.style.left=(8+Math.random()*84)+'%';p.style.top=(40+Math.random()*52)+'%';p.style.animationDelay=(Math.random()*.55)+'s';box.appendChild(p)}}
+    function render(){document.getElementById('stageTitle').textContent=`${String(step+1).padStart(2,'0')} · ${data[step][0]}`;document.getElementById('stageDesc').textContent=data[step][2];[...stepsEl.children].forEach((x,i)=>x.classList.toggle('active',i===step));document.getElementById('bar').style.width=((step+1)/data.length*100)+'%';document.getElementById('core').classList.toggle('on',step>=0);document.getElementById('garment').classList.toggle('on',step>=1);document.getElementById('wings').classList.toggle('on',step>=5);burst(step===5?48:26)}
+    document.getElementById('next').addEventListener('click',()=>{step=Math.min(data.length-1,step+1);render()});document.getElementById('prev').addEventListener('click',()=>{step=Math.max(0,step-1);render()});
+    document.getElementById('cameraBtn').addEventListener('click',async()=>{const status=document.getElementById('status');try{const stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:'user'},audio:false});document.getElementById('video').srcObject=stream;status.textContent='摄像头已开启。当前版本为视觉交互原型，下一步可接入 MediaPipe Pose / Hands 自动识别动作。'}catch(e){status.textContent='摄像头未开启：'+e.message+'。你仍然可以手动预览六段变身。'}});
+    render();
+  </script>
+</body>
+</html>
