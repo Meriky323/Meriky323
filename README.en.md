@@ -38,6 +38,20 @@ In cross-border operations, the hard part is rarely a lack of information. The p
 
 ---
 
+### Homi · Turning shared-living friction into a collaboration prototype
+
+Roommate coordination involves more than splitting bills: payment reminders can be awkward, cleaning responsibilities unclear, and shared supplies bought twice. I used AI coding tools to build **Homi**, bringing expenses, chores, inventory and household agreements into one workspace.
+
+- Connects low stock → purchase claiming → replenishment → a shared expense
+- Uses counts or approximate levels to reduce inventory logging effort
+- Supports demo identity switching to explore chore completion and agreement voting
+
+**Currently a browser-local interactive prototype**, without real multi-user sync or payments. Future capabilities are represented by preview interfaces; the project README documents the boundaries.
+
+👉 [Live demo](https://homi-roommate.meriky.chatgpt.site) · [Source and product notes](https://github.com/Meriky323/homi-roommate)
+
+---
+
 ### Link Checker · Automating pre-launch QA for marketing links
 
 Before an EDM campaign goes live, UTM parameters, discount codes, redirects and destination pages often need repetitive manual checks. It is tedious work, but a small mistake can directly hurt campaign conversion.
