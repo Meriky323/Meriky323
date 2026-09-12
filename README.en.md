@@ -52,6 +52,18 @@ Roommate coordination involves more than splitting bills: payment reminders can 
 
 ---
 
+### Star Awakening · Real-world magical transformation interaction
+
+**Real-World Magical Transformation** is a camera-based visual interaction prototype where users unlock a magical core, top, skirt, boots, crown and final light wings through a sequence of body movements.
+
+- Designs the full transformation rhythm as **gesture → visual response → garment layer → next-stage unlock**
+- Current prototype includes camera access, six-stage state switching, particles, magic rings, garment layers and a final wing reveal
+- Next step: connect **MediaPipe Pose / Hands + Three.js** so gesture detection, body-anchored garments and spatial magic effects react in real time
+
+👉 [View prototype source and project notes](https://github.com/Meriky323/Meriky323/tree/main/projects/star-awakening)
+
+---
+
 ### Link Checker · Automating pre-launch QA for marketing links
 
 Before an EDM campaign goes live, UTM parameters, discount codes, redirects and destination pages often need repetitive manual checks. It is tedious work, but a small mistake can directly hurt campaign conversion.
